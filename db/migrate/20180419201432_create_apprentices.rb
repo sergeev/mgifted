@@ -6,18 +6,18 @@ class CreateApprentices < ActiveRecord::Migration[5.1]
       t.string :full_name               # Имя Фамилия Отчество
       t.string :birth_date              # Дата рождения
       t.string :receipt_date            # Дата поступления (зачисления)
-      t.string :document                # номер документа паспорт и т.д
+      t.string :document                # номер документа паспорт и т.д (форма выбора)
       t.string :parents_1               # Родители: Мать или бабушка
       t.string :parents_2               # Родители: Отец или дедушка
       t.string :achievements            # Личные достижения учащегося
       t.string :phone                   # Телефон
-      t.string :events                  # Мероприятия по годам
+      t.string :events                  # Мероприятия по годам (дублирует achievements)
       t.string :gender                  # Пол: М\Ж
       t.string :status                  # Статус ребенка в организации: 0 - нет статуса 1 - резидент
       t.string :home                    # Прикреплен за организацией: 0 - нет 1 - школа 2 - училище 3 - вуз 4-0 - ЕВРАЗ 4-1 Русал
       t.string :sociallin_1             # Ссылка на социальные сети ребенка
       t.string :sociallin_2             # Ссылка на социальные сети ребенка
-      t.string :sociallin_3             # Ссылка на социальные сети ребенка
+      t.string :email                   # Ссылка на электроную почту
       t.string :valid                   # Разрешен доступ на размещение 0 - нет 1 - да
       t.string :who_added               # Кто добавил в базу ребенка (пользователь)
       t.string :who_update              # Кто последний обновил данные
