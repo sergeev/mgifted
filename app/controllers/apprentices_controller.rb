@@ -1,6 +1,10 @@
 class ApprenticesController < ApplicationController
-    # Базовая авторизация
-    http_basic_authenticate_with name: "admin", password: "admin", except: [:index, :show]
+    # Devise авторизация
+    # в версии 5.1 before_filter был изменен на before_action
+    # если нам нужно определить именно для отдельных методов, то используем
+    # before_action :authenticate_user!, except => [:show, :index]
+    before_action :authenticate_user!
+
     # Вывод всех учащихся
     # app/views/apprentice/index.html.erb
     def index
@@ -64,4 +68,14 @@ class ApprenticesController < ApplicationController
     #def create
     #  render plain: params[:apprentice].inspect
     #end
+
+    # devise auth system
+    # собственные перенаправления как после входа, так и после выхода
+    def after_sign_in_path_for(resource)
+      current_user_path
+    end
+    # После входа пользователь будет перенаправлен на страницу, описанную в хэлпером
+    def after_sign_out_path_for(resource_or_scope)
+      request.referrer
+    end
 end

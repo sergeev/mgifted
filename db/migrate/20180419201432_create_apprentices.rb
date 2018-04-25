@@ -1,4 +1,10 @@
 class CreateApprentices < ActiveRecord::Migration[5.1]
+  # rake db:migrate RAILS_ENV=development
+  # комбинации на управление миграцией
+  # rake db:create
+  # rake db:migrate
+  # удаление старой таблицы и добавление новой
+  # rake db:migrate:redo VERSION=20180419201432
   def change
     create_table :apprentices do |t|
 
