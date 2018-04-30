@@ -42,6 +42,13 @@ group :development, :test do
   gem 'safe_attributes', '~> 1.0', '>= 1.0.10'
 
   gem 'devise', '~> 4.4', '>= 4.4.3'
+  gem 'warden', '~> 1.2', '>= 1.2.7'
+  gem 'orm_adapter', '~> 0.5.0'
+  gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
+  gem 'thread_safe', '~> 0.3.6'
+  #gem 'railties', '~> 5.2'
+  gem 'bootstrap', '~> 4.1.0'
+  gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 end
 
 group :development do
@@ -52,8 +59,15 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'safe_attributes', '~> 1.0', '>= 1.0.10'
-  
+
   gem 'devise', '~> 4.4', '>= 4.4.3'
+  gem 'warden', '~> 1.2', '>= 1.2.7'
+  gem 'orm_adapter', '~> 0.5.0'
+  gem 'bcrypt-ruby', '~> 3.1', '>= 3.1.5'
+  gem 'thread_safe', '~> 0.3.6'
+  #gem 'railties', '~> 5.2'
+  gem 'bootstrap', '~> 4.1.0'
+  gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
