@@ -10,8 +10,8 @@ class CreateApprentices < ActiveRecord::Migration[5.1]
 
       t.string :personal_number         # Персональный номер
       t.string :full_name               # Имя Фамилия Отчество
-      t.string :birth_date              # Дата рождения
-      t.string :receipt_date            # Дата поступления (зачисления)
+      t.date   :birth_date              # Дата рождения
+      t.date   :receipt_date            # Дата поступления (зачисления)
       t.string :document                # номер документа паспорт и т.д (форма выбора)
       t.string :parents_1               # Родители: Мать или бабушка
       t.string :parents_2               # Родители: Отец или дедушка
@@ -26,8 +26,8 @@ class CreateApprentices < ActiveRecord::Migration[5.1]
       t.string :email                   # Ссылка на электроную почту
       t.string :valid                   # Разрешен доступ на размещение 0 - нет 1 - да
       t.string :who_added               # Кто добавил в базу ребенка (пользователь)
-      t.string :who_update              # Кто последний обновил данные
-      t.string :children_table_version  # Версия таблицы
+      t.string :who_update              # Кто последний обновил данные (пользователь)
+      t.string :children_table_version  # Версия таблицы (nil)
 
       t.timestamps                      # Серверный метод обновления данных
     end

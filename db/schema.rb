@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(version: 20180425073910) do
   create_table "apprentices", force: :cascade do |t|
     t.string "personal_number"
     t.string "full_name"
-    t.string "birth_date"
-    t.string "receipt_date"
+    t.date "birth_date"
+    t.date "receipt_date"
     t.string "document"
     t.string "parents_1"
     t.string "parents_2"
