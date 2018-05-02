@@ -1,80 +1,428 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!-- Include the above in your HEAD tag ---->
-<div class="container">
-	<div class="row">
-    <h2>Личное дело ребенка</h2>
-       <div class="col-md-7 ">
-         <div class="panel panel-default">
-           <div class="panel-heading">
-             <h4 >Персональный номер: <%= @apprentice.personal_number %></h4></div>
-             <div class="panel-body">
-               <div class="box box-info">
-                 <div class="box-body">
-                   <div class="col-sm-6">
-                     <div  align="center">
-                       <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
-                       <input id="profile-image-upload" class="hidden" type="file">
-                       <div style="color:#999;" >click here to change profile image</div>
-                       <!--Upload Image Js And Css-->
-                     </div>
-                     <br>
-                     <!-- /input-group -->
-                   </div>
-                   <div class="col-sm-6">
-                     <h4 style="color:#00b1b1;"><%= @apprentice.full_name %></h4>
-                   </span>
-                   <span>
-                     <p>Aspirant</p>
-                   </span>
-                 </div>
-                 <div class="clearfix"></div>
-                 <hr style="margin:5px 0 5px 0;">
-                 <div class="col-sm-5 col-xs-6 tital " >First Name:</div>
-                 <div class="col-sm-7 col-xs-6 ">Prasad</div>
-                 <div class="clearfix"></div>
-                 <div class="bot-border"></div>
-                 <div class="col-sm-5 col-xs-6 tital " >Middle Name:</div>
-                 <div class="col-sm-7"> Shankar</div>
-                 <div class="clearfix"></div>
-                 <div class="bot-border"></div>
-                 <div class="col-sm-5 col-xs-6 tital " >Last Name:</div>
-                 <div class="col-sm-7"> Huddedar</div>
-                 <div class="clearfix"></div>
-                 <div class="bot-border"></div>
-                 <div class="col-sm-5 col-xs-6 tital " >Date Of Joining:</div>
-                 <div class="col-sm-7">15 Jun 2016</div>
-                 <div class="clearfix"></div>
-                 <div class="bot-border"></div>
-                 <div class="col-sm-5 col-xs-6 tital " >Date Of Birth:</div>
-                 <div class="col-sm-7">11 Jun 1998</div>
-                 <div class="clearfix"></div>
-                 <div class="bot-border"></div>
-                 <div class="col-sm-5 col-xs-6 tital " >Place Of Birth:</div>
-                 <div class="col-sm-7">Shirdi</div>
-                 <div class="clearfix"></div>
-                 <div class="bot-border"></div>
-                 <div class="col-sm-5 col-xs-6 tital " >Nationality:</div>
-                 <div class="col-sm-7">Indian</div>
-                 <div class="clearfix"></div>
-                 <div class="bot-border"></div>
-                 <div class="col-sm-5 col-xs-6 tital " >Relition:</div>
-                 <div class="col-sm-7">Hindu</div>
-                 <!-- /.box-body -->
-               </div>
-               <!-- /.box -->
-             </div>
-           </div>
-         </div>
-         <%= link_to 'Back', apprentices_path %>
-       </div>
-       <script>
-       $(function() {
-         $('#profile-image1').on('click', function() {
-           $('#profile-image-upload').click();
-         });
-       });
-     </script>
-   </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+
+    <title>Dashboard Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Меридиан ДБ</a>
+      <input class="form-control form-control-dark w-100" type="text" placeholder="Найти ребенка в базе данных" aria-label="Search">
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  <span data-feather="home"></span>
+                  Главая <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="file"></span>
+                  Orders
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="shopping-cart"></span>
+                  Products
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="users"></span>
+                  Customers
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="bar-chart-2"></span>
+                  Reports
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <span data-feather="layers"></span>
+                  Integrations
+                </a>
+              </li>
+            </ul>
+            </ul>
+          </div>
+        </nav>
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+
+
+          <h2>Section title</h2>
+
+					<div class="container">
+						<div class="row">
+					    <h2>Личное дело ребенка</h2>
+					       <div class="col-md-7 ">
+					         <div class="panel panel-default">
+					           <div class="panel-heading">
+					             <h4 >Персональный номер: <%= @apprentice.personal_number %></h4></div>
+					             <div class="panel-body">
+					               <div class="box box-info">
+					                 <div class="box-body">
+					                   <div class="col-sm-6">
+					                     <div  align="center">
+					                       <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive">
+					                       <input id="profile-image-upload" class="hidden" type="file">
+					                       <div style="color:#999;" >click here to change profile image</div>
+					                       <!--Upload Image Js And Css-->
+					                     </div>
+					                     <br>
+					                     <!-- /input-group -->
+					                   </div>
+					                   <div class="col-sm-6">
+					                     <h4 style="color:#00b1b1;"><%= @apprentice.full_name %></h4>
+					                   </span>
+					                   <span>
+					                     <p>Aspirant</p>
+					                   </span>
+					                 </div>
+					                 <div class="clearfix"></div>
+					                 <hr style="margin:5px 0 5px 0;">
+					                 <div class="col-sm-5 col-xs-6 tital " >First Name:</div>
+					                 <div class="col-sm-7 col-xs-6 ">Prasad</div>
+					                 <div class="clearfix"></div>
+					                 <div class="bot-border"></div>
+					                 <div class="col-sm-5 col-xs-6 tital " >Middle Name:</div>
+					                 <div class="col-sm-7"> Shankar</div>
+					                 <div class="clearfix"></div>
+					                 <div class="bot-border"></div>
+					                 <div class="col-sm-5 col-xs-6 tital " >Last Name:</div>
+					                 <div class="col-sm-7"> Huddedar</div>
+					                 <div class="clearfix"></div>
+					                 <div class="bot-border"></div>
+					                 <div class="col-sm-5 col-xs-6 tital " >Date Of Joining:</div>
+					                 <div class="col-sm-7">15 Jun 2016</div>
+					                 <div class="clearfix"></div>
+					                 <div class="bot-border"></div>
+					                 <div class="col-sm-5 col-xs-6 tital " >Date Of Birth:</div>
+					                 <div class="col-sm-7">11 Jun 1998</div>
+					                 <div class="clearfix"></div>
+					                 <div class="bot-border"></div>
+					                 <div class="col-sm-5 col-xs-6 tital " >Place Of Birth:</div>
+					                 <div class="col-sm-7">Shirdi</div>
+					                 <div class="clearfix"></div>
+					                 <div class="bot-border"></div>
+					                 <div class="col-sm-5 col-xs-6 tital " >Nationality:</div>
+					                 <div class="col-sm-7">Indian</div>
+					                 <div class="clearfix"></div>
+					                 <div class="bot-border"></div>
+					                 <div class="col-sm-5 col-xs-6 tital " >Relition:</div>
+					                 <div class="col-sm-7">Hindu</div>
+					                 <!-- /.box-body -->
+					               </div>
+					               <!-- /.box -->
+					             </div>
+					           </div>
+					         </div>
+					         <%= link_to 'Back', apprentices_path %>
+					       </div>
+					       <script>
+					       $(function() {
+					         $('#profile-image1').on('click', function() {
+					           $('#profile-image-upload').click();
+					         });
+					       });
+					     </script>
+					   </div>
+					</div>
+
+
+
+
+					<div class="container">
+    <div class="row my-2">
+        <div class="col-lg-8 order-lg-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Edit</a>
+                </li>
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                    <h5 style="color:#00b1b1;" class="mb-3"><%= @apprentice.full_name %></h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>About</h6>
+                            <p>
+                                Web Designer, UI/UX Engineer
+                            </p>
+                            <h6>Hobbies</h6>
+                            <p>
+                                Indie music, skiing and hiking. I love the great outdoors.
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Recent badges</h6>
+                            <a href="#" class="badge badge-dark badge-pill">html5</a>
+                            <a href="#" class="badge badge-dark badge-pill">react</a>
+                            <a href="#" class="badge badge-dark badge-pill">codeply</a>
+                            <a href="#" class="badge badge-dark badge-pill">angularjs</a>
+                            <a href="#" class="badge badge-dark badge-pill">css3</a>
+                            <a href="#" class="badge badge-dark badge-pill">jquery</a>
+                            <a href="#" class="badge badge-dark badge-pill">bootstrap</a>
+                            <a href="#" class="badge badge-dark badge-pill">responsive-design</a>
+                            <hr>
+                            <span class="badge badge-primary"><i class="fa fa-user"></i> 900 Followers</span>
+                            <span class="badge badge-success"><i class="fa fa-cog"></i> 43 Forks</span>
+                            <span class="badge badge-danger"><i class="fa fa-eye"></i> 245 Views</span>
+                        </div>
+                        <div class="col-md-12">
+                            <h5 class="mt-2"><span class="fa fa-clock-o ion-clock float-right"></span> Recent Activity</h5>
+                            <table class="table table-sm table-hover table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <strong>Abby</strong> joined ACME Project Team in <strong>`Collaboration`</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Gary</strong> deleted My Board1 in <strong>`Discussions`</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Kensington</strong> deleted MyBoard3 in <strong>`Discussions`</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>John</strong> deleted My Board1 in <strong>`Discussions`</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <strong>Skell</strong> deleted his post Look at Why this is.. in <strong>`Discussions`</strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--/row-->
+                </div>
+                <div class="tab-pane" id="messages">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a> This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                    </div>
+                    <table class="table table-hover table-striped">
+                        <tbody>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">3 hrs ago</span> Here is your a link to the latest summary report from the..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">Yesterday</span> There has been a request on your account since that was..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/10</span> Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/4</span> Vestibulum tincidunt ullamcorper eros eget luctus.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/4</span> Maxamillion ais the fix for tibulum tincidunt ullamcorper eros.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="edit">
+                    <form role="form">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Jane">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Bishop">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="email" value="email@gmail.com">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Company</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Website</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="url" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="" placeholder="Street">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" value="" placeholder="City">
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="text" value="" placeholder="State">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Time Zone</label>
+                            <div class="col-lg-9">
+                                <select id="user_time_zone" class="form-control" size="0">
+                                    <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                                    <option value="Alaska">(GMT-09:00) Alaska</option>
+                                    <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                                    <option value="Arizona">(GMT-07:00) Arizona</option>
+                                    <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                                    <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                                    <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                                    <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="janeuser">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="11111122333">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="11111122333">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-9">
+                                <input type="reset" class="btn btn-secondary" value="Cancel">
+                                <input type="button" class="btn btn-primary" value="Save Changes">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 order-lg-1 text-center">
+            <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+            <h6 class="mt-2">Upload a different photo</h6>
+            <label class="custom-file">
+                <input type="file" id="file" class="custom-file-input">
+                <span class="custom-file-control">Choose file</span>
+            </label>
+        </div>
+    </div>
 </div>
+
+
+
+
+
+        </main>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../../../dist/js/bootstrap.min.js"></script>
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+
+    <!-- Graphs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
