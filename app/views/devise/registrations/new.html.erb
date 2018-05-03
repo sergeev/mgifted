@@ -28,10 +28,10 @@
 
 <%= render "devise/shared/links" %>
 
-link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!-- Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -57,27 +57,7 @@ link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel=
                 <hr>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3 field-label-responsive">
-                <label for="name">Name</label>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-                        <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-user"></i></div>
-                        <input type="text" name="name" class="form-control" id="name"
-                               placeholder="John Doe" required autofocus>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-control-feedback">
-                        <span class="text-danger align-middle">
-                            <!-- Put name validation error messages here -->
-                        </span>
-                </div>
-            </div>
-        </div>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <div class="row">
             <div class="col-md-3 field-label-responsive">
                 <label for="email">E-Mail Address</label>
@@ -85,9 +65,8 @@ link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel=
             <div class="col-md-6">
                 <div class="form-group">
                     <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
-                        <input type="text" name="email" class="form-control" id="email"
-                               placeholder="you@example.com" required autofocus>
                     </div>
                 </div>
             </div>
@@ -109,14 +88,12 @@ link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel=
                         <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
                         <input type="password" name="password" class="form-control" id="password"
                                placeholder="Password" required>
+
+                               <%= f.label :password %>
+                               <% if @minimum_password_length %>
+                               <em>(<%= @minimum_password_length %> characters minimum)</em>
+                               <% end %><%= f.password_field :password, autocomplete: "off" %>
                     </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="form-control-feedback">
-                        <span class="text-danger align-middle">
-                            <i class="fa fa-close"> Example Error Message</i>
-                        </span>
                 </div>
             </div>
         </div>
@@ -136,6 +113,7 @@ link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel=
                 </div>
             </div>
         </div>
+        <% end %>
         <div class="row">
             <div class="col-md-3"></div>
             <div class="col-md-6">
