@@ -20,13 +20,13 @@
                 <tr>
                   <td><%= apprentice.personal_number %></td>
                   <td><%= link_to apprentice.full_name, apprentice_path(apprentice) %></td>
-                  <td>ipsum</td>
-                  <td>dolor</td>
-                  <td>sit</td>
+                  <td>#enterData2</td>
+                  <td>#enterData3</td>
+                  <td>#enterData4</td>
                   <td><%= link_to 'Редактировать', edit_apprentice_path(apprentice) %></td>
                   <td><%= link_to 'Удалить', apprentice_path(apprentice),
                     method: :delete,
-                    data: { confirm: 'Are you sure?' } %>
+                    data: { confirm: 'Вы уверены, что хотите удалить из базы данных?' } %>
                   </td>
                 </tr>
                 </tr>
