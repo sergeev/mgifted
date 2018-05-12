@@ -36,17 +36,17 @@
 
   <p>
     <%= form.label :document %><br>
-    <%= form.text_field :document %>
+    <%= form.text_area :document %>
   </p>
 
   <p>
     <%= form.label :parents_1 %><br>
-    <%= form.text_field :parents_1 %>
+    <%= form.text_area :parents_1 %>
   </p>
 
   <p>
     <%= form.label :parents_2 %><br>
-    <%= form.text_field :parents_2 %>
+    <%= form.text_area :parents_2 %>
   </p>
 
   <p>
@@ -62,13 +62,47 @@
   <p>
     <%= form.label :events %><br>
     <%= form.text_area :events %>
-  </p
+  </p>
 
   <p>
-    <!-- select_ f or m -->
+    <!-- Gender Falame & Male select_ -->
     <%= form.label :gender %><br>
     <%= form.text_area :gender %>
-  </p
+  </p>
+
+  <p>
+    <!-- Resident 0 - not 1 - yes  select_ -->
+    <%= form.label :status %><br>
+    <%= form.text_area :status %>
+  </p>
+
+  <p>
+    <!-- Прикреплен за организацией: 0 - нет 1 - школа 2 - училище 3 - вуз 4-0 - ЕВРАЗ 4-1 Русал  select_ -->
+    <%= form.label :home %><br>
+    <%= form.text_area :home %>
+  </p>
+
+  <p>
+    <%= form.label :sociallin_1 %><br>
+    <%= form.text_area :sociallin_1 %>
+  </p>
+
+  <p>
+    <%= form.label :sociallin_2 %><br>
+    <%= form.text_area :sociallin_2 %>
+  </p>
+
+  <p>
+    <%= form.label :email %><br>
+    <%= form.email_field :email %>
+  </p>
+
+  <p>
+    <!--Разрешен доступ на размещение 0 - нет 1 - да select_ -->
+    <%= form.label :valid %><br>
+    <%= form.text_area :valid %>
+    <%= form.collection_select(:color_id, Color.all, :id, :color_name ) %>
+  </p>
 
   <p>
     <%= form.submit %>

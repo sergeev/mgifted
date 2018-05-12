@@ -60,14 +60,35 @@ class ApprenticesController < ApplicationController
     end
 
     private
+      # ВАЖНО!
       # Передаем только те параметры, что разрешены
       def apprentice_params
-        params.require(:apprentice).permit(:personal_number, :full_name)
+        params.require(:apprentice).permit(:personal_number,
+                                           :full_name,
+                                           :birth_date,
+                                           :receipt_date,
+                                           :document,
+                                           :parents_1,
+                                           :parents_2,
+                                           :achievements,
+                                           :phone,
+                                           :events,
+                                           :gender,
+                                           :status,
+                                           :home,
+                                           :sociallin_1,
+                                           :sociallin_2,
+                                           :email,
+                                           :valid,
+                                           :who_added,
+                                           :who_update,
+                                           :children_table_version 
+                                         )
       end
     # Тест на возврат значений (отклик) nil
-    #def create
-    #  render plain: params[:apprentice].inspect
-    #end
+    # def create
+    #   render plain: params[:apprentice].inspect
+    # end
 
     # devise auth system
     # собственные перенаправления как после входа, так и после выхода
