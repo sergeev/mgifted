@@ -101,7 +101,6 @@
     <!--Разрешен доступ на размещение 0 - нет 1 - да select_ -->
     <%= form.label :valid %><br>
     <%= form.text_area :valid %>
-    <%= form.collection_select(:color_id, Color.all, :id, :color_name ) %>
   </p>
 
   <p>
