@@ -1,3 +1,4 @@
+<div class="container">
 <%= form_with model: @apprentice, local: true do |form| %>
 
   <% if @apprentice.errors.any? %>
@@ -14,97 +15,133 @@
     </div>
   <% end %>
 
-  <p>
-    <%= form.label :personal_number %><br>
-    <%= form.text_field :personal_number %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "Пресональный Номер", class: "col-lg-3 col-form-label form-control-label" %>
+      <div class="col-lg-9">
+          <%= form.text_field :personal_number, class: 'form-control', placeholder: 'Пресональный Номер' %>
+     </div>
+  </div>
 
-  <p>
-    <%= form.label :full_name %><br>
-    <%= form.text_area :full_name %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "Фамилия Имя Отчество", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.text_area :full_name, class: 'form-control', placeholder: 'Фамилия Имя Отчество' %>
+    </div>
+  </div>
 
-  <p>
-    <%= form.label :birth_date %><br>
-    <%= form.date_field :birth_date %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "День рождения", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.date_field :birth_date, class: 'form-control', placeholder: 'День рождения' %>
+    </div>
+  </div>
 
-  <p>
-    <%= form.label :receipt_date %><br>
-    <%= form.date_field :receipt_date %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "Дата зачисления", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.date_field :receipt_date, class: 'form-control', placeholder: 'Дата зачисления' %>
+    </div>
+  </div>
 
-  <p>
-    <%= form.label :document %><br>
-    <%= form.text_area :document %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "Документы", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.text_area :document, class: 'form-control', placeholder: 'Документы, паспорт если есть и т.д' %>
+    </div>
+  </div>
 
-  <p>
-    <%= form.label :parents_1 %><br>
-    <%= form.text_area :parents_1 %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "Данные о родителях №1", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.text_area :parents_1, class: 'form-control', placeholder: 'Данные о родителях №1' %>
+    </div>
+  </div>
 
-  <p>
-    <%= form.label :parents_2 %><br>
-    <%= form.text_area :parents_2 %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "Данные о родителях №2", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.text_area :parents_2, class: 'form-control', placeholder: 'Данные о родителях №2' %>
+    </div>
+  </div>
 
-  <p>
-    <%= form.label :achievements %><br>
-    <%= form.text_area :achievements %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "Достижения учашегося", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.text_area :achievements, class: 'form-control', placeholder: 'Достижения учашегося' %>
+    </div>
+  </div>
 
-  <p>
-    <%= form.label :phone %><br>
-    <%= form.telephone_field :phone %>
-  </p>
+<div class="form-group row">
+    <%= form.label "Телефон для связи", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.telephone_field :phone, class: 'form-control', placeholder: 'Телефон для связи' %>
+    </div>
+  </div>
 
-  <p>
-    <%= form.label :events %><br>
-    <%= form.text_area :events %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "Мероприятия по годам", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.text_area :events, class: 'form-control', placeholder: 'Мероприятия по годам' %>
+    </div>
+  </div>
 
-  <p>
+  <div class="form-group row">
     <!-- Gender Falame & Male select_ -->
-    <%= form.label :gender %><br>
-    <%= form.text_area :gender %>
-  </p>
+    <%= form.label "Пол: М\Ж", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.text_area :gender, class: 'form-control', placeholder: 'Пол: М\Ж' %>
+    </div>
+  </div>
 
-  <p>
+  <div class="form-group row">
     <!-- Resident 0 - not 1 - yes  select_ -->
-    <%= form.label :status %><br>
-    <%= form.text_area :status %>
-  </p>
+    <%= form.label "Статус ребенка в организации: 0 - нет статуса 1 - резидент", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.text_area :status, class: 'form-control', placeholder: 'Статус ребенка в организации: 0 - нет статуса 1 - резидент' %>
+    </div>
+  </div>
 
-  <p>
+  <div class="form-group row">
     <!-- Прикреплен за организацией: 0 - нет 1 - школа 2 - училище 3 - вуз 4-0 - ЕВРАЗ 4-1 Русал  select_ -->
-    <%= form.label :home %><br>
+    <%= form.label "Прикреплен за организацией: 0 - нет 1 - школа 2 - училище 3 - вуз 4-0 - ЕВРАЗ 4-1 Русал", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.select :home, ApprenticesController::home, :to_s, :to_s,:to_s,:to_s,:to_s,:to_s, :include_blank => true, class: 'form-control', placeholder: 'Прикреплен за организацией: 0 - нет 1 - школа 2 - училище 3 - вуз 4-0 - ЕВРАЗ 4-1 Русал' %>
     <%= form.text_area :home %>
-  </p>
+    </div>
+  </div>
 
-  <p>
-    <%= form.label :sociallin_1 %><br>
-    <%= form.text_area :sociallin_1 %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "Ссылка на социальные сети ребенка", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.text_area :sociallin_1, class: 'form-control', placeholder: 'Ссылка на социальные сети ребенка' %>
+    </div>
+  </div>
 
-  <p>
-    <%= form.label :sociallin_2 %><br>
-    <%= form.text_area :sociallin_2 %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "Ссылка на социальные сети ребенка", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.text_area :sociallin_2, class: 'form-control', placeholder: 'Ссылка на социальные сети ребенка' %>
+    </div>
+  </div>
 
-  <p>
-    <%= form.label :email %><br>
-    <%= form.email_field :email %>
-  </p>
+  <div class="form-group row">
+    <%= form.label "Ссылка на электроную почту", class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.email_field :email, class: 'form-control', placeholder: 'Ссылка на электроную почту' %>
+    </div>
+  </div>
 
-  <p>
+  <div class="form-group row">
     <!--Разрешен доступ на размещение 0 - нет 1 - да select_ -->
-    <%= form.label :valid %><br>
-    <%= form.text_area :valid %>
-  </p>
+    <%= form.label 'Разрешен доступ на размещение 0 - нет 1 - да', class: "col-lg-3 col-form-label form-control-label" %>
+    <div class="col-lg-9">
+    <%= form.text_area :valid, class: 'form-control', placeholder: 'Разрешен доступ на размещение 0 - нет 1 - да' %>
+    </div>
+  </div>
 
-  <p>
-    <%= form.submit %>
-  </p>
+  <div class="form-group row">
+    <%= form.button "Обновить данные", class: 'btn btn-lg btn-primary btn-block'  %>
+  </div>
 
 <% end %>
+</div>

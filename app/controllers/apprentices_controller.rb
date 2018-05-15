@@ -5,6 +5,8 @@ class ApprenticesController < ApplicationController
     # before_action :authenticate_user!, except => [:show, :index]
     before_action :authenticate_user!
 
+    :home [['Нет','0'],['Школа','1'],['Училище','2'],['ВУЗ','3'],['ЕВРАЗ','4-0'],['Русал','4-1']]
+
     # Вывод всех учащихся
     # app/views/apprentice/index.html.erb
     def index
@@ -82,7 +84,7 @@ class ApprenticesController < ApplicationController
                                            :valid,
                                            :who_added,
                                            :who_update,
-                                           :children_table_version 
+                                           :children_table_version
                                          )
       end
     # Тест на возврат значений (отклик) nil
