@@ -49,6 +49,7 @@ group :development, :test do
   #gem 'railties', '~> 5.2'
   gem 'bootstrap', '~> 4.1.0'
   gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+  gem 'pg_search', '~> 1.0', '>= 1.0.5'
 end
 
 group :development do
@@ -68,6 +69,7 @@ group :development do
   #gem 'railties', '~> 5.2'
   gem 'bootstrap', '~> 4.1.0'
   gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
+  gem 'pg_search', '~> 1.0', '>= 1.0.5'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

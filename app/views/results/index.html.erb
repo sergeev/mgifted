@@ -1,0 +1,8 @@
+# app/views/results/index.html.erb
+<h3>Результаты поиска по запросу <em><%= params[:query]%></em></h3>
+<% @search_results.each do |result| %>
+  <h4><%= link_to result.full_name, result %></h4>
+  <div><%= result.personal_number.html_safe %></div>
+  <div><%= result.home.html_safe %></div>
+  <hr>
+<% end %>

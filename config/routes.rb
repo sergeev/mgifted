@@ -13,5 +13,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  # Создаем results для глобального поиска в базе данных в #index results
+  get 'results', to: 'results#index', as: 'results'
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,4 +1,9 @@
+<div class="container-fluid">
+  <div class="row">
+    <%= render 'left_block' %>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 <div class="container">
+  <center><h1>Редактирование данных ребенка</h1></center>
 <%= form_with model: @apprentice, local: true do |form| %>
 
   <% if @apprentice.errors.any? %>
@@ -105,8 +110,7 @@
     <!-- Прикреплен за организацией: 0 - нет 1 - школа 2 - училище 3 - вуз 4-0 - ЕВРАЗ 4-1 Русал  select_ -->
     <%= form.label "Прикреплен за организацией: 0 - нет 1 - школа 2 - училище 3 - вуз 4-0 - ЕВРАЗ 4-1 Русал", class: "col-lg-3 col-form-label form-control-label" %>
     <div class="col-lg-9">
-    <%= form.select :home, ApprenticesController::home, :to_s, :to_s,:to_s,:to_s,:to_s,:to_s, :include_blank => true, class: 'form-control', placeholder: 'Прикреплен за организацией: 0 - нет 1 - школа 2 - училище 3 - вуз 4-0 - ЕВРАЗ 4-1 Русал' %>
-    <%= form.text_area :home %>
+    <%= form.text_field :home, class: 'form-control', placeholder: 'Прикреплен за организацией: 0 - нет 1 - школа 2 - училище 3 - вуз 4-0 - ЕВРАЗ 4-1 Русал' %>
     </div>
   </div>
 
@@ -142,6 +146,7 @@
   <div class="form-group row">
     <%= form.button "Обновить данные", class: 'btn btn-lg btn-primary btn-block'  %>
   </div>
-
 <% end %>
+</div>
+</div>
 </div>

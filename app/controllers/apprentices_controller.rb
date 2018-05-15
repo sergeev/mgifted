@@ -5,8 +5,6 @@ class ApprenticesController < ApplicationController
     # before_action :authenticate_user!, except => [:show, :index]
     before_action :authenticate_user!
 
-    :home [['Нет','0'],['Школа','1'],['Училище','2'],['ВУЗ','3'],['ЕВРАЗ','4-0'],['Русал','4-1']]
-
     # Вывод всех учащихся
     # app/views/apprentice/index.html.erb
     def index

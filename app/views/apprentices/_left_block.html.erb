@@ -2,15 +2,12 @@
   <div class="sidebar-sticky">
     <ul class="nav flex-column">
       <li class="nav-item">
-          <span data-feather="home"></span>
           <%= link_to 'Главная', controller: 'apprentices' %>
       </li>
       <li class="nav-item">
-          <span data-feather="file"></span>
-          <%= link_to 'Добавить ребенка', controller: 'apprentices' %>
+          <%= link_to 'Добавить ребенка', new_apprentice_path %>
       </li>
       <li class="nav-item">
-          <span data-feather="search"></span>
           <%= link_to 'Расширенный поиск', controller: 'apprentices' %>
       </li>
     </ul>
