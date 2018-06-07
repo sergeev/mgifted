@@ -3,7 +3,7 @@
       <div class="row">
         <%= render 'left_block' %>
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-          <h2>Список детей в базе данных</h2>
+          <h2>Список детей в базе данных Меридиан</h2>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
@@ -23,10 +23,10 @@
                   <td>#enterData2</td>
                   <td>#enterData3</td>
                   <td>#enterData4</td>
-                  <td><%= link_to 'Редактировать', edit_apprentice_path(apprentice) %></td>
+                  <td><%= link_to 'Редактировать', edit_apprentice_path(apprentice), class: "badge badge-primary" %></td>
                   <td><%= link_to 'Удалить', apprentice_path(apprentice),
                     method: :delete,
-                    data: { confirm: 'Вы уверены, что хотите удалить из базы данных?' } %>
+                    data: { confirm: 'Вы уверены, что хотите удалить из базы данных?' }, class: "badge badge-danger" %>
                   </td>
                 </tr>
                 </tr>

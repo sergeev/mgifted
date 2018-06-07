@@ -2,12 +2,11 @@ Rails.application.routes.draw do
   devise_for :users
   # вывод всех ссылок
   # bundle exec rake routes
+  # вход пользователя
   get 'persons/profile', as: 'user_root'
 
+  # главная страница
   get 'welcome/index'
-  # вход пользователя
-  # get 'persons/profile', as: 'user_root'
-
   # ученик
   resources :apprentices
 
