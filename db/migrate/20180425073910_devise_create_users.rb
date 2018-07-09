@@ -1,4 +1,10 @@
 # frozen_string_literal: true
+# rake db:migrate RAILS_ENV=development
+# комбинации на управление миграцией
+# rake db:create
+# rake db:migrate
+# удаление старой таблицы и добавление новой
+# rake db:migrate:redo VERSION=20180425073910
 
 class DeviseCreateUsers < ActiveRecord::Migration[5.1]
   def change
@@ -6,6 +12,12 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.1]
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+
+      ## Personal name
+      t.string :full_name, null: false, default: ""
+
+      ## System status: admin 2 -> teacher 1 -> user 0
+      t.string :user_status, null: false, default: 0
 
       ## Recoverable
       t.string   :reset_password_token

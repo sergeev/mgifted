@@ -6,7 +6,7 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Введите ваш Email' %>
     <%= f.label :password, 'Password', class: 'sr-only' %>
     <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(минимальное количество символов <%= @minimum_password_length %>)</em>
     <% end %>
     <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Введите ваш Пароль' %>
     <%= f.label :password_confirmation %>

@@ -7,7 +7,7 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Введите ваш Email' %><br>
     <%= f.label :password, 'Password', class: 'sr-only' %>
       <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <em>(минимальное количество символов <%= @minimum_password_length %>)</em>
       <% end %>
     <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Введите ваш новый Пароль' %><br>
     <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: 'Подтвердите ваш новый Пароль' %><br>
@@ -15,7 +15,7 @@
     <%= f.button "Обновить", class: 'btn btn-lg btn-primary btn-block' %>
 <% end %>
 <h3>Отключить мою учетную запись</h3>
-<p><%= button_to "Отключить мою учетную запись", registration_path(resource_name), data: { confirm: "Вы уверены?" }, method: :delete, class: 'btn btn-lg btn-primary btn-block' %></p>
+<p><%= button_to "Отключить мою учетную запись", registration_path(resource_name), data: { confirm: "Вы уверены? После отключения вашей учетной записи её сможет восстановить только администратор!" }, method: :delete, class: 'btn btn-lg btn-primary btn-block' %></p>
 <%= link_to "Вернуться", :back %>
 </div>
 <%= render 'apprentices/footer' %>
