@@ -53,6 +53,7 @@ group :development, :test do
   gem 'pg_search', '~> 1.0', '>= 1.0.5'
   gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
   gem 'font-awesome-sass', '~> 5.5', '>= 5.5.0.1'
+  gem 'react-rails', '~> 2.4', '>= 2.4.7'
 end
 
 group :development do
@@ -76,6 +77,7 @@ group :development do
   gem 'pg_search', '~> 1.0', '>= 1.0.5'
   gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
   gem 'font-awesome-sass', '~> 5.5', '>= 5.5.0.1'
+  gem 'react-rails', '~> 2.4', '>= 2.4.7'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
