@@ -51,6 +51,8 @@ group :development, :test do
   gem 'bootstrap', '~> 4.1.0'
   gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
   gem 'pg_search', '~> 1.0', '>= 1.0.5'
+  gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+  gem 'font-awesome-sass', '~> 5.5', '>= 5.5.0.1'
 end
 
 group :development do
@@ -72,6 +74,8 @@ group :development do
   gem 'bootstrap', '~> 4.1.0'
   gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
   gem 'pg_search', '~> 1.0', '>= 1.0.5'
+  gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+  gem 'font-awesome-sass', '~> 5.5', '>= 5.5.0.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
