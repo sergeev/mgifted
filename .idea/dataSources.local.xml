@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails mgifted: test" uuid="e832e6bd-80db-4a1f-b0cd-513d2c7c2ad4">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+    </data-source>
+    <data-source name="Rails mgifted: production" uuid="26d9f74f-6794-4f2a-b147-e0d21ce085a6">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <user-name>postgres</user-name>
+    </data-source>
+    <data-source name="Rails mgifted: development" uuid="603bb8a4-8890-40cd-9e69-ee2a8692effd">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>sergeev</user-name>
+    </data-source>
+  </component>
+</project>
